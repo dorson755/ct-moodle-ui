@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import CourseList from './CourseList';
+import CourseDetails from './CourseDetails';
 
-function App() {
+const App = () => {
+  const [selectedCourse, setSelectedCourse] = useState(null);
+
+  const onCourseSelect = (course) => {
+    setSelectedCourse(course);
+  };
+
+  const courses = [
+    {
+      id: 1,
+      name: 'Introduction to React',
+      description: 'Learn the basics of React',
+      teacher: 'John Smith',
+    },
+    {
+      id: 2,
+      name: 'Advanced React',
+      description: 'Learn advanced React concepts',
+      teacher: 'Jane Doe',
+    },
+    {
+      id: 3,
+      name: 'React Native',
+      description: 'Learn how to build mobile apps with React Native',
+      teacher: 'Bob Johnson',
+    },
+  ];
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Course Selection</h1>
+      <CourseList courses={courses} onCourseSelect={onCourseSelect} />
+      <CourseDetails course={selectedCourse} />
     </div>
   );
-}
+};
 
 export default App;
