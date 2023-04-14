@@ -1,0 +1,13 @@
+span {
+    display: inline-flex; 
+    justify-content: space-between; 
+}
+
+span > h4 {
+    color:aqua;
+    padding: 10px;
+}
+
+div > span {
+    margin: 10px;
+}

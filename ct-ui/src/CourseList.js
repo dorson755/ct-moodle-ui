@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CourseList.css';
 
 const CourseList = ({ courses, onCourseSelect }) => {
   const handleChange = (event) => {
