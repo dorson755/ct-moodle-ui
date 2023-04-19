@@ -9,7 +9,7 @@ const CourseList = ({ courses, onCourseSelect }) => {
   };
 
    return <div>
-  <label htmlFor="course-select">Select a course:</label>
+    <label htmlFor="course-select">Select a course:</label>
       <select id="course-select" onChange={handleChange}>
         <option value="">--Select a course--</option>
         {courses.map((course) => (

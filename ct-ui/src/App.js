@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import CourseList from './CourseList';
-import CourseDetails from './CourseDetails';
-import LoginModal from './LoginModal';
+import { Switch, Route } from 'react-router-dom';
+import CourseList from './pages/CourseList';
+import CourseDetails from './pages/CourseDetails';
+import NavBar from './Layout';
 
 const App = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -39,9 +40,9 @@ const App = () => {
   
 
   return (
-    <div className="App">
-      <LoginModal/>
-      <h1>Course Selection</h1>
+    <div>
+      <NavBar/>
+      <h1 class="title is-2">Course Selection</h1>
       <CourseList courses={courses} onCourseSelect={onCourseSelect} />
       <CourseDetails course={selectedCourse} />
     </div>

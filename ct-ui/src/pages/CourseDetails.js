@@ -4,7 +4,7 @@ import './CourseDetails.css';
 
 const CourseDetails = ({ course }) => {
   if (!course) {
-    return <div>Select a course from the list</div>;
+    return <div class="subtitle is-4" >Select a course from the list</div>;
   }
 
   const exportGradesUrl = `https://cybertech242-online.com/grade/export/xls/index.php?id=${course.id}`;
@@ -12,14 +12,14 @@ const CourseDetails = ({ course }) => {
   const enrollParticipantsUrl = `https://cybertech242-online.com/user/index.php?id=${course.id}`;
 
   return (
-    <div>
+    <div class="content">
       <h2>{course.name}</h2>
       <span><h4>Teacher: {course.teacher}</h4><h4>Term: {course.term}</h4><h4>Year: {course.year}</h4></span>
       <Browser url={`https://cybertech242-online.com/course/view.php?id=${course.id}`} />
       <div>
-        <button onClick={() => window.open(exportGradesUrl, '_blank')}>Export Grades</button>
-        <button onClick={() => window.open(setupGradeBookUrl, '_blank')}>Set up Grade Book</button>
-        <button onClick={() => window.open(enrollParticipantsUrl, '_blank')}>Enroll Participants</button>
+        <button class="button" onClick={() => window.open(exportGradesUrl, '_blank')}>Export Grades</button>
+        <button class="button" onClick={() => window.open(setupGradeBookUrl, '_blank')}>Set up Grade Book</button>
+        <button class="button" onClick={() => window.open(enrollParticipantsUrl, '_blank')}>Enroll Participants</button>
       </div>
     </div>
   );
